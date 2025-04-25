@@ -33,11 +33,7 @@ class TestLocators:
 
     # Локаторы в личном кабинете
     PROFILE = (By.XPATH, '//a[@href = "/account/profile"]')
-    ORDER_HISTORY = (By.XPATH, '//a[@href = "/account/order-history"]') # скорее всего не пригодится в проверках
     LOGOUT_BUTTON = (By.XPATH, '//button[@type = "button"]')
-
-    # Кнопка Оформить заказ
-    PLACE_ORDER_BUTTON = (By.XPATH, '//button[text()="Оформить заказ"]') # скорее всего не пригодится в проверках
 
     # Локаторы для переходов по разделам
     # логотип в шапке профиля
@@ -47,14 +43,13 @@ class TestLocators:
     CONSTRUCTOR_BUTTON = (By.XPATH, "//p[@class='AppHeader_header__linkText__3q_va ml-2' and text()='Конструктор']")
 
     # раздел Булки в конструкторе
-    SECTION_BUNS = (By.XPATH, "//span[@class='text text_type_main-default' and text()='Булки']")
+    BUNS_TAB_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current') and .//span[text()='Булки']]")
+    BUNS_TAB = (By.XPATH, "//div[contains(@class, '') and .//span[text()='Булки']]")
 
     # раздел Соусы в конструкторе
-    SECTION_SAUCES = (By.XPATH, "//span[@class='text text_type_main-default' and text()='Соусы']")
+    SAUCES_TAB = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Соусы')]")
+    SAUCES_TAB_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current__2BEPc') and contains(., 'Соусы')]")
 
     # раздел Начинки в конструкторе
-    SECTION_TOPPINGS = (By.XPATH, "//span[@class='text text_type_main-default' and text()='Начинки']")
-
-# есть еще вот такой (я такой не делала): Селектор, помечающий выбранный раздел конструктора как активный, если бы делала, то вот мой: //div[contains(@class, 'tab_tab__1SPyG') and contains(@class, 'noselect')]
-
-# selected_button = By.XPATH, ('//div[@class = ''"tab_tab__1SPyG tab_tab_type_current__2BEPc pt-4 pr-10 pb-4 pl-10 noselect"]')
+    FILLINGS_TAB = (By.XPATH, "//div[contains(@class, 'tab_tab__1SPyG') and contains(., 'Начинки')]")
+    FILLINGS_TAB_ACTIVE = (By.XPATH, "//div[contains(@class, 'tab_tab_type_current__2BEPc') and contains(., 'Начинки')]")
