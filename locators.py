@@ -32,7 +32,7 @@ class TestLocators:
     LOGIN_BUTTON = (By.XPATH, '//button[text()="Войти"]')
 
     # Локаторы в личном кабинете
-    PROFILE = (By.XPATH, '//a[@href = "/account/profile"]') # скорее всего не пригодится в проверках
+    PROFILE = (By.XPATH, '//a[@href = "/account/profile"]')
     ORDER_HISTORY = (By.XPATH, '//a[@href = "/account/order-history"]') # скорее всего не пригодится в проверках
     LOGOUT_BUTTON = (By.XPATH, '//button[@type = "button"]')
 
@@ -41,7 +41,7 @@ class TestLocators:
 
     # Локаторы для переходов по разделам
     # логотип в шапке профиля
-    LOGO_SWITCHING = (By.XPATH, "//div[@class='AppHeader_header__logo__2D0X2']")
+    LOGO_SWITCHING = (By.XPATH, '//div[@class="AppHeader_header__logo__2D0X2"]')
 
     # кнопка Конструктор в шапке профиля
     CONSTRUCTOR_BUTTON = (By.XPATH, "//p[@class='AppHeader_header__linkText__3q_va ml-2' and text()='Конструктор']")
