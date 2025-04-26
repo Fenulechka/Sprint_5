@@ -6,6 +6,7 @@ from locators import TestLocators
 from helper import create_random_email, create_random_password
 from data import UsersTestData
 from urls import LOGIN_URL
+from messages import INCORRECT_PASSWORD_MESSAGE
 
 
 class TestRegistration:
@@ -34,4 +35,4 @@ class TestRegistration:
         driver.find_element(*TestLocators.EMAIL).send_keys(random_email)
         driver.find_element(*TestLocators.PASSWORD).send_keys(wrong_password)
         driver.find_element(*TestLocators.REG_BUTTON).click()
-        assert driver.find_element(*TestLocators.INCORRECT_PASSWORD).text == 'Некорректный пароль'
+        assert driver.find_element(*TestLocators.INCORRECT_PASSWORD).text == INCORRECT_PASSWORD_MESSAGE

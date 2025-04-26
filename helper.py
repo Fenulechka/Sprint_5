@@ -1,7 +1,6 @@
 import random
 import string
 
-
 # Генерация емейла для регистрации с двумя рандомными буквами и рандомным числом от 100 до 999
 def create_random_email():
     random_letters = ''.join((random.choice(string.ascii_letters) for x in range(2)))
