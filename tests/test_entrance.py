@@ -1,9 +1,8 @@
-import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import TestLocators
-from conftest import driver
 from data import UsersTestData
+from urls import LOGIN_URL
 
 class TestEntrance:
     # вход по кнопке "Войти в аккаунт" на главной
@@ -12,7 +11,7 @@ class TestEntrance:
         driver.find_element(*TestLocators.EMAIL_LOGIN).send_keys(UsersTestData.email)
         driver.find_element(*TestLocators.PASSWORD_LOGIN).send_keys(UsersTestData.password)
         driver.find_element(*TestLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/login"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(LOGIN_URL))
         assert driver.current_url.endswith("/login")
 
     # вход через кнопку "Личный кабинет"
@@ -21,7 +20,7 @@ class TestEntrance:
         driver.find_element(*TestLocators.EMAIL_LOGIN).send_keys(UsersTestData.email)
         driver.find_element(*TestLocators.PASSWORD_LOGIN).send_keys(UsersTestData.password)
         driver.find_element(*TestLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/login"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(LOGIN_URL))
         assert driver.current_url.endswith("/login")
 
     # вход через кнопку в форме регистрации
@@ -32,7 +31,7 @@ class TestEntrance:
         driver.find_element(*TestLocators.EMAIL_LOGIN).send_keys(UsersTestData.email)
         driver.find_element(*TestLocators.PASSWORD_LOGIN).send_keys(UsersTestData.password)
         driver.find_element(*TestLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/login"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(LOGIN_URL))
         assert driver.current_url.endswith("/login")
 
     # вход через кнопку в форме восстановления пароля
@@ -43,5 +42,5 @@ class TestEntrance:
         driver.find_element(*TestLocators.EMAIL_LOGIN).send_keys(UsersTestData.email)
         driver.find_element(*TestLocators.PASSWORD_LOGIN).send_keys(UsersTestData.password)
         driver.find_element(*TestLocators.LOGIN_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/login"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(LOGIN_URL))
         assert driver.current_url.endswith("/login")

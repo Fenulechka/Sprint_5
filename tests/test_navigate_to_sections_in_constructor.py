@@ -1,8 +1,6 @@
-import pytest
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import TestLocators
-from conftest import driver
 
 class TestNavigateToSectionsInConstructor:
     # переход в конструкторе из раздела "Начинки" в раздел "Булки", без авторизации в личном кабинете

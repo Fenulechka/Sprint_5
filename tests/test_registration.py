@@ -3,9 +3,9 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from locators import TestLocators
-from conftest import driver
 from helper import create_random_email, create_random_password
 from data import UsersTestData
+from urls import LOGIN_URL
 
 
 class TestRegistration:
@@ -19,7 +19,7 @@ class TestRegistration:
         driver.find_element(*TestLocators.EMAIL).send_keys(random_email)
         driver.find_element(*TestLocators.PASSWORD).send_keys(random_password)
         driver.find_element(*TestLocators.REG_BUTTON).click()
-        WebDriverWait(driver, 10).until(EC.url_to_be("https://stellarburgers.nomoreparties.site/login"))
+        WebDriverWait(driver, 10).until(EC.url_to_be(LOGIN_URL))
         assert driver.current_url.endswith("/login")
 
     # Проверка появления сообщения "Некорректный пароль" при вводе невалидного по длине пароля
